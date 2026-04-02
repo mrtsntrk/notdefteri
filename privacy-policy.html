@@ -6,56 +6,25 @@
   <title>Not Defteri — Gizlilik Politikası</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f8f8fc;
-      color: #1a1a2e;
-      line-height: 1.7;
-      padding: 24px 16px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f8fc; color: #1a1a2e; line-height: 1.7; padding: 24px 16px; }
     .container { max-width: 680px; margin: 0 auto; }
-    header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 40px;
-      padding-bottom: 24px;
-      border-bottom: 2px solid #e8e8f0;
-    }
-    .logo {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #7c3aed, #ec4899);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px;
-    }
-    h1 { font-size: 22px; font-weight: 800; color: #1a1a2e; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e8e8f0; }
+    .logo { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, #7c3aed, #ec4899); display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    h1 { font-size: 22px; font-weight: 800; }
     .subtitle { font-size: 13px; color: #9898b8; margin-top: 2px; }
-    h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #7c3aed;
-      margin: 28px 0 10px;
-      padding-left: 12px;
-      border-left: 3px solid #7c3aed;
-    }
+    h2 { font-size: 16px; font-weight: 700; color: #7c3aed; margin: 28px 0 10px; padding-left: 12px; border-left: 3px solid #7c3aed; }
     p { font-size: 15px; color: #3a3a5a; margin-bottom: 10px; }
-    .highlight {
-      background: #f0fdf4;
-      border: 1px solid #86efac;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 20px 0;
-    }
-    .highlight p { color: #166534; margin: 0; font-weight: 600; }
-    footer {
-      margin-top: 48px;
-      padding-top: 20px;
-      border-top: 1px solid #e8e8f0;
-      font-size: 12px;
-      color: #9898b8;
-      text-align: center;
-    }
+    ul { font-size: 15px; color: #3a3a5a; padding-left: 20px; margin-bottom: 10px; }
+    li { margin-bottom: 6px; }
+    .box { border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+    .box-green { background: #f0fdf4; border: 1px solid #86efac; }
+    .box-blue  { background: #eff6ff; border: 1px solid #93c5fd; }
+    .box-yellow{ background: #fefce8; border: 1px solid #fde047; }
+    .box p { margin: 0; font-weight: 600; }
+    .box-green p { color: #166534; }
+    .box-blue  p { color: #1e40af; }
+    .box-yellow p { color: #854d0e; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e8e8f0; font-size: 12px; color: #9898b8; text-align: center; }
   </style>
 </head>
 <body>
@@ -68,35 +37,51 @@
       </div>
     </header>
 
-    <div class="highlight">
-      <p>✅ Not Defteri uygulaması hiçbir kişisel veri toplamaz, saklamaz veya iletmez. Tüm notlarınız yalnızca cihazınızda yerel olarak depolanır.</p>
+    <div class="box box-green">
+      <p>✅ Temel kullanımda (bulut senkronizasyonu kapalı) hiçbir kişisel veri toplanmaz veya iletilmez. Tüm notlar yalnızca cihazınızda saklanır.</p>
     </div>
 
-    <h2>Topladığımız Veriler</h2>
-    <p>Not Defteri uygulaması herhangi bir kişisel veri toplamaz. Oluşturduğunuz notlar yalnızca cihazınızın yerel belleğinde saklanır ve hiçbir sunucuya gönderilmez.</p>
+    <h2>Uygulama Çalışma Modları</h2>
+    <p>Not Defteri iki modda çalışabilir:</p>
+    <ul>
+      <li><strong>Yerel mod (varsayılan):</strong> Notlar yalnızca cihazınızda saklanır. İnternet bağlantısı gerekmez, hiçbir veri paylaşılmaz.</li>
+      <li><strong>Bulut senkronizasyon modu (isteğe bağlı):</strong> Kullanıcı tarafından etkinleştirildiğinde notlar Google Firebase altyapısına senkronize edilir. Bu özellik varsayılan olarak kapalıdır.</li>
+    </ul>
 
-    <h2>İnternet Bağlantısı</h2>
-    <p>Uygulama tamamen çevrimdışı çalışır. Herhangi bir ağ bağlantısı gerektirmez ve internet üzerinden iletişim kurmaz.</p>
+    <h2>Bulut Senkronizasyonu (İsteğe Bağlı)</h2>
+    <div class="box box-blue">
+      <p>ℹ️ Bu özellik yalnızca siz açarsanız çalışır. Ayarlar → Bulut Senkronizasyonu → Kapalı konumda tutarsanız hiçbir veri internete gönderilmez.</p>
+    </div>
+    <p>Bulut senkronizasyonu etkinleştirildiğinde:</p>
+    <ul>
+      <li>Notlarınız <strong>Google Firebase / Firestore</strong> sunucularında şifreli olarak saklanır.</li>
+      <li>Kimliğiniz anonim olarak doğrulanır — isim, e-posta veya telefon numarası toplanmaz.</li>
+      <li>Veriler yalnızca sizin cihazınızla ilişkilendirilen anonim kimliğe ait alanda saklanır.</li>
+      <li>Firebase'in kendi gizlilik politikası geçerlidir: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+    </ul>
+
+    <h2>Topladığımız Veriler</h2>
+    <p>Uygulama kendi başına hiçbir analitik, reklam takibi veya kişisel veri toplama sistemi içermez. Kullanıcı adı, e-posta, konum veya cihaz kimliği toplanmaz.</p>
+
+    <h2>PIN Kilidi ve Şifreleme</h2>
+    <p>PIN kilidi özelliği etkinleştirildiğinde PIN kodunuz yalnızca cihazınızda şifrelenmiş özet (SHA-256) formatında saklanır. Ham PIN kodu hiçbir yere gönderilmez veya iletilmez.</p>
 
     <h2>Üçüncü Taraf Hizmetler</h2>
-    <p>Uygulama hiçbir üçüncü taraf analitik, reklam veya takip servisi kullanmaz. Google Analytics, Firebase ya da benzer herhangi bir SDK entegrasyonu bulunmamaktadır.</p>
-
-    <h2>Veri Güvenliği</h2>
-    <p>Notlarınız yalnızca cihazınızda bulunur. Uygulamayı sildiğinizde tüm veriler cihazınızdan kalıcı olarak silinir.</p>
+    <p>Uygulama yalnızca isteğe bağlı bulut senkronizasyonu için <strong>Google Firebase</strong> (Firestore + Authentication) kullanır. Reklam, analitik veya başka herhangi bir üçüncü taraf SDK içermez.</p>
 
     <h2>Çocukların Gizliliği</h2>
-    <p>Uygulama hiçbir yaş grubundan kullanıcıya ait kişisel veri toplamadığından çocukların gizliliği konusunda özel bir risk taşımamaktadır.</p>
+    <p>Uygulama herhangi bir yaş grubundan kullanıcıya ait kişisel veri toplamaz.</p>
+
+    <h2>Veri Silme</h2>
+    <p>Notlarınızı ve bulut verilerinizi istediğiniz zaman Ayarlar → Tüm Notları Sil seçeneği ile silebilirsiniz. Uygulamayı kaldırdığınızda yerel veriler otomatik olarak silinir.</p>
 
     <h2>İletişim</h2>
-    <p>Bu gizlilik politikasıyla ilgili sorularınız için uygulama mağaza sayfasındaki geliştirici iletişim bilgilerini kullanabilirsiniz.</p>
+    <p>Sorularınız için uygulama mağaza sayfasındaki geliştirici iletişim bilgilerini kullanabilirsiniz.</p>
 
     <h2>Değişiklikler</h2>
-    <p>Bu politika gerektiğinde güncellenebilir. Değişiklikler bu sayfada yayınlanacaktır.</p>
-    <p>Son güncelleme: 2 Nisan 2026</p>
+    <p>Son güncelleme: 3 Nisan 2026</p>
 
-    <footer>
-      © 2026 Not Defteri · Tüm hakları saklıdır
-    </footer>
+    <footer>© 2026 Not Defteri · Tüm hakları saklıdır</footer>
   </div>
 </body>
 </html>
