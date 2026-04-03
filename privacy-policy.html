@@ -17,14 +17,20 @@
     ul { font-size: 15px; color: #3a3a5a; padding-left: 20px; margin-bottom: 10px; }
     li { margin-bottom: 6px; }
     .box { border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
-    .box-green { background: #f0fdf4; border: 1px solid #86efac; }
-    .box-blue  { background: #eff6ff; border: 1px solid #93c5fd; }
-    .box-yellow{ background: #fefce8; border: 1px solid #fde047; }
+    .box-green  { background: #f0fdf4; border: 1px solid #86efac; }
+    .box-blue   { background: #eff6ff; border: 1px solid #93c5fd; }
+    .box-yellow { background: #fefce8; border: 1px solid #fde047; }
+    .box-red    { background: #fef2f2; border: 1px solid #fca5a5; }
     .box p { margin: 0; font-weight: 600; }
-    .box-green p { color: #166534; }
-    .box-blue  p { color: #1e40af; }
+    .box-green  p { color: #166534; }
+    .box-blue   p { color: #1e40af; }
     .box-yellow p { color: #854d0e; }
+    .box-red    p { color: #991b1b; }
     footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e8e8f0; font-size: 12px; color: #9898b8; text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th { background: #7c3aed; color: white; padding: 10px 12px; text-align: left; }
+    td { padding: 10px 12px; border-bottom: 1px solid #e8e8f0; color: #3a3a5a; }
+    tr:nth-child(even) td { background: #f8f8fc; }
   </style>
 </head>
 <body>
@@ -38,50 +44,44 @@
     </header>
 
     <div class="box box-green">
-      <p>✅ Temel kullanımda (bulut senkronizasyonu kapalı) hiçbir kişisel veri toplanmaz veya iletilmez. Tüm notlar yalnızca cihazınızda saklanır.</p>
+      <p>✅ Bulut hesabı oluşturmadan uygulama tamamen çevrimdışı çalışır ve hiçbir veri toplanmaz. Hesap isteğe bağlıdır.</p>
     </div>
-
-    <h2>Uygulama Çalışma Modları</h2>
-    <p>Not Defteri iki modda çalışabilir:</p>
-    <ul>
-      <li><strong>Yerel mod (varsayılan):</strong> Notlar yalnızca cihazınızda saklanır. İnternet bağlantısı gerekmez, hiçbir veri paylaşılmaz.</li>
-      <li><strong>Bulut senkronizasyon modu (isteğe bağlı):</strong> Kullanıcı tarafından etkinleştirildiğinde notlar Google Firebase altyapısına senkronize edilir. Bu özellik varsayılan olarak kapalıdır.</li>
-    </ul>
-
-    <h2>Bulut Senkronizasyonu (İsteğe Bağlı)</h2>
-    <div class="box box-blue">
-      <p>ℹ️ Bu özellik yalnızca siz açarsanız çalışır. Ayarlar → Bulut Senkronizasyonu → Kapalı konumda tutarsanız hiçbir veri internete gönderilmez.</p>
-    </div>
-    <p>Bulut senkronizasyonu etkinleştirildiğinde:</p>
-    <ul>
-      <li>Notlarınız <strong>Google Firebase / Firestore</strong> sunucularında şifreli olarak saklanır.</li>
-      <li>Kimliğiniz anonim olarak doğrulanır — isim, e-posta veya telefon numarası toplanmaz.</li>
-      <li>Veriler yalnızca sizin cihazınızla ilişkilendirilen anonim kimliğe ait alanda saklanır.</li>
-      <li>Firebase'in kendi gizlilik politikası geçerlidir: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
-    </ul>
 
     <h2>Topladığımız Veriler</h2>
-    <p>Uygulama kendi başına hiçbir analitik, reklam takibi veya kişisel veri toplama sistemi içermez. Kullanıcı adı, e-posta, konum veya cihaz kimliği toplanmaz.</p>
+    <table>
+      <tr><th>Veri</th><th>Ne Zaman</th><th>Amaç</th><th>Şifreli mi</th></tr>
+      <tr><td>E-posta adresi</td><td>Hesap oluşturulunca</td><td>Kimlik doğrulama</td><td>✅</td></tr>
+      <tr><td>Notlar (kullanıcı içeriği)</td><td>Bulut sync açıkken</td><td>Cihazlar arası senkronizasyon</td><td>✅</td></tr>
+    </table>
+    <p>Bunların dışında; kullanıcı adı, telefon, konum, reklam kimliği veya cihaz bilgisi <strong>toplanmaz</strong>.</p>
+
+    <h2>Hesap ve Bulut Senkronizasyonu</h2>
+    <div class="box box-blue">
+      <p>ℹ️ Hesap oluşturmak isteğe bağlıdır. Hesap olmadan uygulama tamamen yerel olarak çalışır.</p>
+    </div>
+    <p>Hesap oluşturduğunuzda e-posta adresiniz <strong>Google Firebase Authentication</strong> altyapısında güvenli biçimde saklanır. Notlarınız <strong>Firebase Firestore</strong>'da, e-posta adresinizle ilişkilendirilmiş özel alanınızda tutulur; hiçbir başka kullanıcı erişemez.</p>
+    <p>Firebase gizlilik politikası: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+
+    <h2 id="hesap-silme">Hesap Silme</h2>
+    <div class="box box-red">
+      <p>⚠️ Hesabınızı sildiğinizde e-posta adresiniz ve buluttaki tüm notlarınız kalıcı olarak ve geri dönüşü olmayan şekilde silinir.</p>
+    </div>
+    <p>Hesabınızı silmek için iki yöntem mevcuttur:</p>
+    <ul>
+      <li><strong>Uygulama içinden:</strong> Ayarlar → Bulut Hesabı → <em>Hesabı Sil</em> seçeneğini kullanın.</li>
+      <li><strong>Web üzerinden:</strong> Firebase Console veya bu sayfadaki geliştirici iletişim bilgilerinden talep gönderebilirsiniz.</li>
+    </ul>
+    <p>Hesap silindikten sonra yalnızca cihazınızdaki yerel notlar korunur; bunlar silinmez.</p>
 
     <h2>PIN Kilidi ve Şifreleme</h2>
-    <p>PIN kilidi özelliği etkinleştirildiğinde PIN kodunuz yalnızca cihazınızda şifrelenmiş özet (SHA-256) formatında saklanır. Ham PIN kodu hiçbir yere gönderilmez veya iletilmez.</p>
+    <p>PIN kilidi özelliği etkinleştirildiğinde PIN kodunuz yalnızca cihazınızda SHA-256 ö zet formatında saklanır. Ham PIN hiçbir yere iletilmez.</p>
 
     <h2>Üçüncü Taraf Hizmetler</h2>
-    <p>Uygulama yalnızca isteğe bağlı bulut senkronizasyonu için <strong>Google Firebase</strong> (Firestore + Authentication) kullanır. Reklam, analitik veya başka herhangi bir üçüncü taraf SDK içermez.</p>
+    <p>Uygulama yalnızca isteğe bağlı bulut hesabı için <strong>Google Firebase</strong> (Authentication + Firestore) kullanır. Reklam, analitik veya başka bir üçüncü taraf SDK içermez.</p>
 
     <h2>Çocukların Gizliliği</h2>
-    <p>Uygulama herhangi bir yaş grubundan kullanıcıya ait kişisel veri toplamaz.</p>
-
-    <h2>Veri Silme</h2>
-    <p>Notlarınızı ve bulut verilerinizi istediğiniz zaman Ayarlar → Tüm Notları Sil seçeneği ile silebilirsiniz. Uygulamayı kaldırdığınızda yerel veriler otomatik olarak silinir.</p>
-
-    <h2>İletişim</h2>
-    <p>Sorularınız için uygulama mağaza sayfasındaki geliştirici iletişim bilgilerini kullanabilirsiniz.</p>
+    <p>13 yaş altı kullanıcılara hesap oluşturulmasını tavsiye etmiyoruz. Uygulama kendi başına kişisel veri toplamaz.</p>
 
     <h2>Değişiklikler</h2>
-    <p>Son güncelleme: 3 Nisan 2026</p>
+    <p>Bu politika güncellendiğinde mağaza sayfasında duyurulacaktır. Son güncelleme: <strong>3 Nisan 2026</strong></p>
 
-    <footer>© 2026 Not Defteri · Tüm hakları saklıdır</footer>
-  </div>
-</body>
-</html>
