@@ -1,87 +1,106 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Not Defteri — Gizlilik Politikası</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f8fc; color: #1a1a2e; line-height: 1.7; padding: 24px 16px; }
-    .container { max-width: 680px; margin: 0 auto; }
-    header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e8e8f0; }
-    .logo { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, #7c3aed, #ec4899); display: flex; align-items: center; justify-content: center; font-size: 26px; }
-    h1 { font-size: 22px; font-weight: 800; }
-    .subtitle { font-size: 13px; color: #9898b8; margin-top: 2px; }
-    h2 { font-size: 16px; font-weight: 700; color: #7c3aed; margin: 28px 0 10px; padding-left: 12px; border-left: 3px solid #7c3aed; }
-    p { font-size: 15px; color: #3a3a5a; margin-bottom: 10px; }
-    ul { font-size: 15px; color: #3a3a5a; padding-left: 20px; margin-bottom: 10px; }
-    li { margin-bottom: 6px; }
-    .box { border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
-    .box-green  { background: #f0fdf4; border: 1px solid #86efac; }
-    .box-blue   { background: #eff6ff; border: 1px solid #93c5fd; }
-    .box-yellow { background: #fefce8; border: 1px solid #fde047; }
-    .box-red    { background: #fef2f2; border: 1px solid #fca5a5; }
-    .box p { margin: 0; font-weight: 600; }
-    .box-green  p { color: #166534; }
-    .box-blue   p { color: #1e40af; }
-    .box-yellow p { color: #854d0e; }
-    .box-red    p { color: #991b1b; }
-    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e8e8f0; font-size: 12px; color: #9898b8; text-align: center; }
-    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-    th { background: #7c3aed; color: white; padding: 10px 12px; text-align: left; }
-    td { padding: 10px 12px; border-bottom: 1px solid #e8e8f0; color: #3a3a5a; }
-    tr:nth-child(even) td { background: #f8f8fc; }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Not Defteri — Gizlilik Politikası</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f0f1a;color:#e2e2f0;line-height:1.7;padding:0}
+.hero{background:linear-gradient(135deg,#7c3aed22,#ec4899);padding:48px 24px 32px;text-align:center}
+.logo{font-size:48px;margin-bottom:12px}
+h1{font-size:24px;font-weight:900;background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:13px;color:#818cf8;margin-top:6px}
+.content{max-width:720px;margin:0 auto;padding:32px 24px 60px}
+h2{font-size:17px;font-weight:800;color:#a78bfa;margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(167,139,250,0.2)}
+p{font-size:14px;color:#c4c4dc;margin-bottom:10px}
+ul{padding-left:20px;margin-bottom:10px}
+li{font-size:14px;color:#c4c4dc;margin-bottom:4px}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px}
+.badge-info{background:rgba(99,102,241,0.2);color:#818cf8}
+.badge-warn{background:rgba(245,158,11,0.2);color:#fbbf24}
+.badge-ok{background:rgba(34,197,94,0.2);color:#4ade80}
+a{color:#a78bfa}
+.updated{text-align:center;font-size:12px;color:#4b5563;margin-top:40px}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">📓</div>
-      <div>
-        <h1>Not Defteri</h1>
-        <div class="subtitle">Gizlilik Politikası</div>
-      </div>
-    </header>
+<div class="hero">
+  <div class="logo">📓</div>
+  <h1>Gizlilik Politikası</h1>
+  <div class="subtitle">Not Defteri Uygulaması — Son güncelleme: Nisan 2026</div>
+</div>
 
-    <div class="box box-green">
-      <p>✅ Bulut hesabı oluşturmadan uygulama tamamen çevrimdışı çalışır ve hiçbir veri toplanmaz. Hesap isteğe bağlıdır.</p>
-    </div>
+<div class="content">
 
-    <h2>Topladığımız Veriler</h2>
-    <table>
-      <tr><th>Veri</th><th>Ne Zaman</th><th>Amaç</th><th>Şifreli mi</th></tr>
-      <tr><td>E-posta adresi</td><td>Hesap oluşturulunca</td><td>Kimlik doğrulama</td><td>✅</td></tr>
-      <tr><td>Notlar (kullanıcı içeriği)</td><td>Bulut sync açıkken</td><td>Cihazlar arası senkronizasyon</td><td>✅</td></tr>
-    </table>
-    <p>Bunların dışında; kullanıcı adı, telefon, konum, reklam kimliği veya cihaz bilgisi <strong>toplanmaz</strong>.</p>
+  <p><span class="badge badge-ok">✓ Çevrimdışı</span> Bulut hesabı oluşturmadan uygulama tamamen çevrimdışı çalışır ve hiçbir veri toplanmaz. Hesap isteğe bağlıdır.</p>
 
-    <h2>Hesap ve Bulut Senkronizasyonu</h2>
-    <div class="box box-blue">
-      <p>ℹ️ Hesap oluşturmak isteğe bağlıdır. Hesap olmadan uygulama tamamen yerel olarak çalışır.</p>
-    </div>
-    <p>Hesap oluşturduğunuzda e-posta adresiniz <strong>Google Firebase Authentication</strong> altyapısında güvenli biçimde saklanır. Notlarınız <strong>Firebase Firestore</strong>'da, e-posta adresinizle ilişkilendirilmiş özel alanınızda tutulur; hiçbir başka kullanıcı erişemez.</p>
-    <p>Firebase gizlilik politikası: <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></p>
+  <h2>1. Topladığımız Veriler</h2>
+  <p>Hesap oluşturduğunuzda yalnızca aşağıdaki veriler işlenir:</p>
+  <ul>
+    <li><strong>E-posta adresi</strong> — Firebase Authentication ile kimlik doğrulama için</li>
+    <li><strong>Not içerikleri</strong> — Yalnızca sizin erişebileceğiniz özel bulut alanınızda</li>
+    <li><strong>Paylaşılan notlar</strong> — Siz paylaşmayı seçerseniz, seçilen yazar kimliğiyle (anonim, takma ad veya maskelenmiş e-posta) diğer kullanıcıların görebileceği şekilde saklanır</li>
+    <li><strong>Yazar alias</strong> — Keşfet özelliğinde paylaşılan notlarla birlikte görüntülenen kimlik bilgisi</li>
+    <li><strong>Satın alma bilgisi</strong> — PRO/abonelik durumu Google Play üzerinden işlenir; ödeme bilgileri Google tarafından saklanır, uygulamamıza iletilmez</li>
+  </ul>
+  <p>Bunların dışında; kullanıcı adı, telefon numarası, konum, reklam kimliği veya cihaz bilgisi <strong>toplanmaz</strong>.</p>
 
-    <h2 id="hesap-silme">Hesap Silme</h2>
-    <div class="box box-red">
-      <p>⚠️ Hesabınızı sildiğinizde e-posta adresiniz ve buluttaki tüm notlarınız kalıcı olarak ve geri dönüşü olmayan şekilde silinir.</p>
-    </div>
-    <p>Hesabınızı silmek için iki yöntem mevcuttur:</p>
-    <ul>
-      <li><strong>Uygulama içinden:</strong> Ayarlar → Bulut Hesabı → <em>Hesabı Sil</em> seçeneğini kullanın.</li>
-      <li><strong>Web üzerinden:</strong> Firebase Console veya bu sayfadaki geliştirici iletişim bilgilerinden talep gönderebilirsiniz.</li>
-    </ul>
-    <p>Hesap silindikten sonra yalnızca cihazınızdaki yerel notlar korunur; bunlar silinmez.</p>
+  <h2>2. Hesap ve Bulut Senkronizasyonu</h2>
+  <span class="badge badge-info">ℹ️ İsteğe Bağlı</span>
+  <p>Hesap oluşturmak isteğe bağlıdır. Hesap olmadan uygulama tamamen yerel olarak çalışır.</p>
+  <p>Hesap oluşturduğunuzda e-posta adresiniz Google Firebase Authentication altyapısında güvenli biçimde saklanır. Notlarınız Firebase Firestore'da, e-posta adresinizle ilişkilendirilmiş özel alanınızda tutulur; hiçbir başka kullanıcı erişemez.</p>
+  <p>Firebase gizlilik politikası: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></p>
 
-    <h2>PIN Kilidi ve Şifreleme</h2>
-    <p>PIN kilidi özelliği etkinleştirildiğinde PIN kodunuz yalnızca cihazınızda SHA-256 ö zet formatında saklanır. Ham PIN hiçbir yere iletilmez.</p>
+  <h2>3. Not Paylaşımı ve Keşfet Özelliği</h2>
+  <p>Keşfet özelliği, kullanıcıların notlarını isteğe bağlı olarak diğer uygulama kullanıcılarıyla paylaşmasına olanak tanır.</p>
+  <ul>
+    <li><strong>Anonim paylaşım:</strong> Notunuz rastgele üretilmiş bir takma adla yayınlanır</li>
+    <li><strong>Takma ad:</strong> Seçtiğiniz özel bir isimle paylaşırsınız</li>
+    <li><strong>Maskelenmiş e-posta:</strong> E-postanızın bir kısmı gizlenerek gösterilir</li>
+    <li><strong>Şifreli paylaşım:</strong> İçerik cihazınızda AES-256-GCM ile şifrelenir; sunucuda yalnızca şifreli veri saklanır</li>
+    <li><strong>Link paylaşımı (PRO):</strong> Paylaşım linki aracılığıyla notunuz web tarayıcısında görüntülenebilir hale gelir</li>
+  </ul>
+  <p>Paylaştığınız notları istediğiniz zaman Keşfet → "Benimkiler" sekmesinden kaldırabilirsiniz.</p>
+  <p>Uygunsuz içerikleri diğer kullanıcılar "Bildir" butonuyla raporlayabilir. Raporlar incelenerek gerektiğinde içerik kaldırılır.</p>
 
-    <h2>Üçüncü Taraf Hizmetler</h2>
-    <p>Uygulama yalnızca isteğe bağlı bulut hesabı için <strong>Google Firebase</strong> (Authentication + Firestore) kullanır. Reklam, analitik veya başka bir üçüncü taraf SDK içermez.</p>
+  <h2>4. Satın Alma ve Abonelik</h2>
+  <p>Not Defteri PRO ve PRO+ planları Google Play üzerinden satın alınır. Ödeme işlemleri tamamen Google'ın altyapısında gerçekleşir; kart veya ödeme bilgileri uygulamamıza iletilmez.</p>
+  <ul>
+    <li><strong>PRO (tek seferlik):</strong> Satın alma sonrası kalıcı olarak aktif olur</li>
+    <li><strong>PRO+ (abonelik):</strong> İptal etmediğiniz sürece otomatik yenilenir</li>
+    <li>Aboneliği iptal etmek için: Google Play → Abonelikler → Not Defteri PRO+</li>
+  </ul>
+  <p>Google Play satın alma politikası: <a href="https://play.google.com/about/play-terms">play.google.com/about/play-terms</a></p>
 
-    <h2>Çocukların Gizliliği</h2>
-    <p>13 yaş altı kullanıcılara hesap oluşturulmasını tavsiye etmiyoruz. Uygulama kendi başına kişisel veri toplamaz.</p>
+  <h2>5. Hesap Silme</h2>
+  <span class="badge badge-warn">⚠️ Geri Alınamaz</span>
+  <p>Hesabınızı sildiğinizde e-posta adresiniz ve buluttaki tüm notlarınız kalıcı olarak silinir. Paylaşılmış notlarınız da kaldırılır.</p>
+  <p>Hesabınızı silmek için:</p>
+  <ul>
+    <li><strong>Uygulama içinden:</strong> Ayarlar → Bulut Hesabı → Hesabı Sil</li>
+    <li><strong>E-posta ile:</strong> <a href="mailto:destek@notdefteri.app">destek@notdefteri.app</a> adresine yazın</li>
+  </ul>
+  <p>Silme işlemi sonrası yalnızca cihazınızdaki yerel notlar korunur.</p>
 
-    <h2>Değişiklikler</h2>
-    <p>Bu politika güncellendiğinde mağaza sayfasında duyurulacaktır. Son güncelleme: <strong>3 Nisan 2026</strong></p>
+  <h2>6. PIN Kilidi ve Şifreleme</h2>
+  <p>PIN kilidi etkinleştirildiğinde PIN kodunuz yalnızca cihazınızda SHA-256 özet formatında saklanır. Ham PIN hiçbir yere iletilmez.</p>
+  <p>Şifreli not paylaşımında şifreleme anahtarı yalnızca sizde kalır; Firebase içeriği şifreli blob olarak saklar, şifreyi bilmez.</p>
 
+  <h2>7. Üçüncü Taraf Hizmetler</h2>
+  <ul>
+    <li><strong>Google Firebase</strong> — Kimlik doğrulama ve Firestore veri tabanı</li>
+    <li><strong>Google Play Billing</strong> — Uygulama içi satın alma altyapısı</li>
+  </ul>
+  <p>Reklam, analitik veya başka bir üçüncü taraf SDK <strong>içermez</strong>.</p>
+
+  <h2>8. Çocukların Gizliliği</h2>
+  <p>13 yaş altı kullanıcılara hesap oluşturulmasını tavsiye etmiyoruz. Uygulama kendi başına kişisel veri toplamaz.</p>
+
+  <h2>9. Değişiklikler</h2>
+  <p>Bu politika güncellendiğinde mağaza sayfasında ve bu sayfada duyurulacaktır.</p>
+
+  <p class="updated">Son güncelleme: Nisan 2026 — <a href="mailto:destek@notdefteri.app">destek@notdefteri.app</a></p>
+</div>
+</body>
+</html>
